@@ -1,29 +1,28 @@
 import java.io.*;
 import java.util.*;
-  
-public class Solution{
-    
-    public static void main(String[]args){
-    Scanner s= new Scanner(System.in);
-    int n;
-    n=s.nextInt();
-    if(n<=1)
-    {
-        System.out.println("Not Prime");
-    }
-    else if(n==2){
-        System.out.println("Prime");
-    }else {
-        int i=3;
-        while(i*i<=n){
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner s=new Scanner(System.in);
+        int n;
+        n=s.nextInt();
+        if(n<=1)
+        {
+            System.out.println("Not prime ");
+            return;
+        }
+        boolean isPrime=true;
+        for(int i=2;i<=n/2;i++){
             if(n%i==0){
-                System.out.println("Not Prime");
-                return;
-            }else{
-                i+=2;
+                isPrime=false;
+                break;
             }
         }
-        System.out.println("Prime");
-    }
-}
+        if(isPrime){
+            System.out.println("Prime");
+        }else{
+            System.out.println("Not Prime");
+        }
+    }      
 }
